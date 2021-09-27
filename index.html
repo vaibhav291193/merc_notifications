@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notifications</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="inputField.css">
+<link rel="stylesheet" type="text/css" href="buttons.css">
+<link rel="stylesheet" type="text/css" href="notifications.css">
+    
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+</head>
+
+<body>
+<div class="row" style="margin-left:24px;">
+<div class="col-md-3"></div>
+<div class="col-md-9 row" >
+<div class="col-md-8 row">
+<div class="notification close warning animation" aria-live="polite" role="status"><span aria-label="Caution:" class="icon warning-icon"></span><div><div class="text"><div class="desktop">For the latest on our efforts during COVID-19 please <div class=\'inline-links\'><p><a href=\'#\' class=\'by-keyboard\'>click here.</a></p></div></div><div class="mobile">For the latest on our efforts during COVID-19 please <div class=\'inline-links\'><p><a href=\'#\' class=\'by-keyboard\'>click here.</a></p></div></div></div></div><button aria-label="Close toast notification" class="closebtn micro-buttons by-keyboard" onclick="removeNotification(this)"></button></div>
+
+
+<div style="padding-top: 32px; padding-bottom:16px;">
+<h1 id="formHeading">Save your Postal Code</h1>
+</div>
+
+<div class="notification info animation" aria-live="polite" role="status"><span aria-label="Note:" class="icon info-icon"></span><div><div class="text"><div class="desktop">Customers may experience delays as we continue to put safety first. Please track your item. Our call centre has no further information.</div><div class="mobile">Customers may experience delays as we continue to put safety first. Please track your item. Our call centre has no further information.</div></div></div></div>
+
+<form aria-labelledby="formHeading" name="form1">
+
+<div style="padding-top:16px;">
+<label id="postalCode">Postal Code</label><p id="tpcHintText" class="hintText">Example: A2A 2A2</p><input id="postalCode" type="text" autocomplete="no" aria-labelledby="postalCode tpcHintText" aria-required="true" aria-invalid="false" aria-describedby="errMsg2"><div id="errMsg2" class="ds-error"></div
+</div>
+
+<div style="padding-top: 16px;">
+<button id="saveBtn" onclick="validatePostalCode()" class="button primary-button by-keyboard" type="button">
+                    Save
+                </button>
+                <button id="cancelBtn" onclick="closeDialog(this)" class="button secondary-button by-keyboard">
+                    Cancel
+                </button>
+</div>
+<div id="notificationContainer"></div>
+
+
+</form>
+</div>
+
+<br role="none"/>
+<br role="none"/>
+<br role="none"/>
+<br role="none"/>
+<br role="none"/>
+
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<script src="buttons-script.js"></script>
+<script src="inputFieldScript.js"></script>
+<script src="notifications.js"></script>
+<script src="custom.js"></script>
+</body>
+
+</html>
