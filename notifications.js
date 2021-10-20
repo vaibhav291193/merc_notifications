@@ -1,7 +1,7 @@
 function validatePostalCode() {
 var postalCode = document.form1.postalCode.value;
 
-if(postalCodeLenAndCharValidation(postalCode)) {
+if(postalCodeLenAndCharValidationLoop(postalCode)) {
 createNotification(cssType = 'notification', 
                                          toastType = 'success', 
                                          toastIconAria = 'Success:', 
@@ -22,6 +22,7 @@ createNotification(cssType = 'notification',
 return false;;
 }
 
+
 function postalCodeLenAndCharValidation(inputString) {
 var format = /[!@#$ %^&*()_+\-=\[\]{};':"\\|,.<>\/?] +/;
 if(inputString.length >=6 && inputString.length <=7) {
@@ -34,6 +35,30 @@ return false;
 }
 return false;
 }
+
+function postalCodeLenAndCharValidationLoop(inputString) {
+var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+var counter = 0;
+if(inputString.length >=6 && inputString.length <=7) {
+
+for(let i=0; i<inputString.length; i++) {
+
+if(!format.test(inputString[i])) {
+counter++;
+
+}
+}
+if(counter == inputString.length) {
+return true;
+} else {
+return false;
+}
+
+} else {
+return false;
+}
+}
+
 
 
 /*
@@ -278,4 +303,8 @@ function removeNotification(e) {
     setTimeout(()=> {
         nodeToRemove.remove();
     }, 700);
+}
+
+function removeWarning(a) {
+    document.getElementById(a).remove();
 }

@@ -131,13 +131,19 @@ Do not delete the following comment. It is essential for tracking purposes.
 }
 
 /* Notifications */
-#notificationContainer {
+#notificationContainer, 
+#notificationContainerW,
+#notificationContainerI {
     position: relative;
 }
-#notificationContainer .notification{
+#notificationContainer .notification,
+#notificationContainerW .notification,
+#notificationContainerI .notification {
   padding: 24px 24px 24px 72px;
 }
-#notificationContainer .notification.close{
+#notificationContainer .notification.close,
+#notificationContainerW .notification.close,
+#notificationContainerI .notification.close {
   padding: 24px 56px 24px 72px;
 }
 
@@ -150,7 +156,9 @@ Do not delete the following comment. It is essential for tracking purposes.
   height: 24px;
 }
 #toastsContainer .icon,
-#notificationContainer .icon {
+#notificationContainer .icon,
+#notificationContainerW .icon,
+#notificationContainerI .icon  {
   left: 24px;
 }
 
@@ -286,20 +294,28 @@ button.closebtn:hover,
   }
 
   #toastsContainer .notification,
-  #notificationContainer .notification {
+  #notificationContainer .notification,
+ #notificationContainerW .notification,
+#notificationContainerI .notification {
     padding: 16px 16px 16px 56px;
   }
   
   #toastsContainer .notification.close,
-  #notificationContainer .notification.close{
+  #notificationContainer .notification.close, 
+#notificationContainerW .notification.close,
+#notificationContainerI .notification.close {
     padding: 16px 54px 16px 56px;
   }
 
   #toastsContainer .icon,
-  #notificationContainer .icon{
+  #notificationContainer .icon,
+#notificationContainerW .icon,
+#notificationContainerI .icon {
     left: 16px;
   }
-  #notificationContainer .closebtn {
+  #notificationContainer .closebtn,
+#notificationContainerW .closebtn,
+#notificationContainerI .closebtn {
     visibility: visible;
   }
 
