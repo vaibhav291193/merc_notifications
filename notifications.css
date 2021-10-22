@@ -49,8 +49,7 @@ Do not delete the following comment. It is essential for tracking purposes.
 
     /* Transition effects on screen */
     padding: 0px;
-padding-top: 24px;    
-opacity: 1;
+    opacity: 1;
     transition: all 0.5s ease-out;
     transition-property: padding, opacity;
 }
@@ -394,4 +393,3 @@ p a {
 .micro-buttons.by-keyboard:focus {
   box-shadow: 0 0 0 0px #fff, 0 0 0 0px #0467c6 !important;
 }
-

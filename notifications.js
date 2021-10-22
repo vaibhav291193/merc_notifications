@@ -1,23 +1,31 @@
 function validatePostalCode() {
 var postalCode = document.form1.postalCode.value;
 
+var container = document.getElementById('notificationContainer');
+if(container.childNodes.length > 0) {
+container.childNodes[0].remove();
+}
+
 if(postalCodeLenAndCharValidationLoop(postalCode)) {
 createNotification(cssType = 'notification', 
                                          toastType = 'success', 
                                          toastIconAria = 'Success:', 
                                          desktopMessage = 'Postal Code saved successfully.', 
-                                         mobileMessage = 'Delivery preference is saved.', 
-                                         closeButton = false, 
+                                         mobileMessage = 'Postal Code saved successfully.', 
+containerDiv = 'notificationContainer',                                         
+closeButton = false, 
                                          autoClose = false);
 
 } else {
 createNotification(cssType = 'notification', 
                                          toastType = 'error', 
                                          toastIconAria = 'Error:', 
-                                         desktopMessage = 'We were unable to find a Postal Code. Ensure the Postal Code is correct. Check the spelling of the postal code.', 
-                                         mobileMessage = 'We were unable to find a Postal Code. Ensure the Postal Code is correct. Check the spelling of the postal code.', 
-                                         closeButton = false, 
+                                         desktopMessage = 'Unable to save postal code.', 
+                                         mobileMessage = 'Unable to save postal code.', 
+containerDiv = 'notificationContainer',                                         
+closeButton = false, 
                                          autoClose = false);
+
 }
 return false;;
 }
@@ -67,9 +75,9 @@ Do not delete the following comment. It is essential for tracking purposes.
 */
 var timeoutHandle;
 var closeTime = 5000;
-function createNotification(cssType, notificationType, notificationIconAria, desktopMessage, mobileMessage, closeButton = true, autoClose = false) {
+function createNotification(cssType, notificationType, notificationIconAria, desktopMessage, mobileMessage, containerDiv, closeButton = true, autoClose = false) {
     var notificationContainer = createNotificationContainer(cssType, notificationType, closeButton);
-    initNotification(cssType, notificationContainer);
+    initNotification(cssType, notificationContainer, containerDiv);
 /* A11Y delay for Screen reader */
     setTimeout(() => {
         createNotificationIcon(notificationContainer, notificationType, notificationIconAria);
@@ -258,12 +266,12 @@ function createNotificationCloseButton(notificationContainer) {
     notificationContainer.appendChild(closeButton);
 }
 
-function initNotification(cssType, notificationContainer) {
+function initNotification(cssType, notificationContainer, containerDiv) {
     if (cssType == 'toast') {
         selectedElement = 'toastsContainer';
     }
     else {
-        selectedElement = 'notificationContainer';
+        selectedElement = containerDiv;
     }
 
     let element = document.getElementById(selectedElement);
